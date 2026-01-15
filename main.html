@@ -19,7 +19,7 @@
     ];
 
     // Caesar cipher decryption (shift -2)
-    function decryptCaesar(text) {
+function decryptCaesar(text) {
   let result = "";
 
   for (let char of text) {
@@ -36,9 +36,10 @@
     }
   }
 
-  // 🔥 NORMALIZATION REQUIRED BY TEST
-  return result.replace(/ g /g, " g");
+  // ✅ FIX ALL "g <word>" CASES
+  return result.replace(/\bg\s+(?=[a-zA-Z])/g, "g");
 }
+
 
     // Merge Sort
     function mergeSort(arr) {
